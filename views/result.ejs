@@ -1,0 +1,35 @@
+<%- include('./base/header.ejs') %>
+<div class="alert alert-primary w-50 mx-auto" role="alert" >
+    <h1 class="h1 text-center">Results for: "<%= searchQuery %>"</h1>
+</div>
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">phone Number</th>
+      <th scope="col">Location</th>
+      <th scope="col">Status</th>
+      <th scope="col">Form</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% if (students.length > 0) { %>
+  <% for( let i = 0; i < students.length; i++ ) { %>
+  <tr>
+      <th scope="row"><%=i+1%>.</th>
+      <td><%= students[i].name %></td>
+      <td><%= students[i].phoneNumber %></td>
+      <td><%= students[i].address %></td>
+      <td><%= students[i].status %></td>
+      <td><%= students[i].form %></td>
+    </tr>
+   <% } %>
+<% } else{%>
+<p class="text-danger">No matching students found.</p>
+<% } %>
+    </tbody>
+</div>
+<a href="/home">Back to  Search</a>
+<%- include('./base/footer.ejs') %>
