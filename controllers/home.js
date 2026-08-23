@@ -91,9 +91,8 @@ const search_student =async(req,res)=>{
 const login_page = async(req,res)=>{
 const userName=req.body.name;
 const userPassword= req.body.password;
-const user1 ='admin1';
-const user2 ='admin2';
-if (userName!=user1||user2 && userPassword!='mchinjiseco1') {
+
+if (!userName && !userPassword) {
 res.render('404')
 // 
 } else(
