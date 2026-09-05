@@ -1,7 +1,16 @@
 
 import Student from "../models/studentSchema.js";
 
+const view_student = async(req,res)=>{
 
+    try {
+    const student = await Student.findById(req.params.id)
+    res.render('student',{student})
+    } catch (error) {
+       console.log(error.message) 
+    }
+    
+}
 const landing_page = (req,res)=>{
     res.render('login')
 }
@@ -111,4 +120,4 @@ res.redirect('/login')
 
 
 
-export{register,home,student_new_records,new_record,edit_student,update_student,delete_student,search_student,landing_page,login_page} ;
+export{register,home,student_new_records,new_record,edit_student,update_student,delete_student,search_student,landing_page,login_page,view_student} ;

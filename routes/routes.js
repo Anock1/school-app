@@ -1,6 +1,6 @@
 import express from "express";
 
-import { register,login_page,landing_page,home,student_new_records,new_record,edit_student,update_student,delete_student,search_student} from "../controllers/home.js";
+import { register,login_page,landing_page,home,student_new_records,new_record,edit_student,update_student,delete_student,search_student,view_student} from "../controllers/home.js";
 
 const route = express.Router();
 
@@ -14,6 +14,7 @@ route.post('/update_student/:id',update_student);
 route.post('/delete/:id',delete_student);
 route.post('/search',search_student);
 route.post('/login',login_page)
+route.get('/view/:id',view_student)
 
 
 export default route;
