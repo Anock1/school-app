@@ -11,8 +11,7 @@ const view_student = async(req,res)=>{
     }
     
 }
-const landing_page = (req,res)=>{
-    res.render('login')
+const landing_page = (req,res)=>{.$   res.render('login')
 }
 const home = async(req,res)=>{
 
